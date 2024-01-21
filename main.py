@@ -8,5 +8,3 @@ if __name__ == "__main__":
     widget = FCM_Visualization()
     widget.show()
     sys.exit(app.exec())
-
-
