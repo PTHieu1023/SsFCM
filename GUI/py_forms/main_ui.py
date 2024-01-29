@@ -14,7 +14,7 @@ class Ui_fcm_visualizer(object):
         fcm_visualizer.setObjectName("fcm_visualizer")
         fcm_visualizer.resize(960, 540)
         fcm_visualizer.setMinimumSize(QtCore.QSize(720, 405))
-        fcm_visualizer.setStyleSheet("")
+        fcm_visualizer.setStyleSheet("background-color: #fff; color: #000")
         self.gridLayout = QtWidgets.QGridLayout(fcm_visualizer)
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetNoConstraint)
         self.gridLayout.setContentsMargins(6, 6, 6, 6)

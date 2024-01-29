@@ -21,22 +21,22 @@ def calculate_sse(data, v, u, m):
 	return sse
 
 
-def dunn_index(X: np.ndarray, W: np.ndarray, mu:np.ndarray):
-	n = X.shape[0]
-	c = mu.shape[0]
+# def dunn_index(X: np.ndarray, W: np.ndarray, mu:np.ndarray):
+# 	n = X.shape[0]
+# 	c = mu.shape[0]
 
-	within_cluster_distances = []
-	for i in range(c):
-		cluster_i = X[W[:, i] == 1]
-		within_cluster_distances.append(np.mean([np.linalg.norm(x - y) for x, y in itertools.combinations(cluster_i, 2)]))
+# 	within_cluster_distances = []
+# 	for i in range(c):
+# 		cluster_i = X[W[:, i] == 1]
+# 		within_cluster_distances.append(np.mean([np.linalg.norm(x - y) for x, y in itertools.combinations(cluster_i, 2)]))
 	
-	between_cluster_distances = []
-	for i in range(c):
-		for j in range(i + 1, c):
-			cluster_i = X[W[:, i] == 1]
-			cluster_j = X[W[:, j] == 1]
-			between_cluster_distances.append(np.linalg.norm(mu[i] - mu[j]))
-	return np.max(between_cluster_distances) / np.sum(within_cluster_distances)
+# 	between_cluster_distances = []
+# 	for i in range(c):
+# 		for j in range(i + 1, c):
+# 			cluster_i = X[W[:, i] == 1]
+# 			cluster_j = X[W[:, j] == 1]
+# 			between_cluster_distances.append(np.linalg.norm(mu[i] - mu[j]))
+# 	return np.max(between_cluster_distances) / np.sum(within_cluster_distances)
 
 
 def get_validator_criteria(data: np.ndarray, membership: np.ndarray, centroids: np.ndarray, m, DB:bool = True, SSE:bool = True, Dunn: bool = True):
